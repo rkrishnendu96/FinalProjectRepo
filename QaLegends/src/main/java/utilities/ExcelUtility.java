@@ -16,7 +16,7 @@ public class ExcelUtility {
 	public static String getStringData(int a, int b, String sheet) {
 		try {
 
-			f = new FileInputStream("C:\\eclipse\\QaLegends\\src\\test\\resources\\TestData.xlsx");
+			f = new FileInputStream("C:\\Users\\Dell-i5\\git\\FinalProjectRepo\\QaLegends\\src\\test\\resources\\TestData.xlsx");
 			w = new XSSFWorkbook(f);
 			s = w.getSheet(sheet);
 			XSSFRow row = s.getRow(a);
@@ -30,7 +30,7 @@ public class ExcelUtility {
 	public static String getIntegerData(int a, int b, String sheet)   {
 		try {
 
-			f = new FileInputStream("C:\\eclipse\\QaLegends\\src\\test\\resources\\TestData.xlsx");
+			f = new FileInputStream("C:\\Users\\Dell-i5\\git\\FinalProjectRepo\\QaLegends\\src\\test\\resources\\TestData.xlsx");
 			w = new XSSFWorkbook(f);
 			s = w.getSheet(sheet);
 			XSSFRow row = s.getRow(a);
@@ -43,3 +43,5 @@ public class ExcelUtility {
 		}
 	}
 }
+
+

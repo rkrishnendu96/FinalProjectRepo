@@ -27,6 +27,10 @@ public class LoginPageTest extends Base {
 		Assert.assertTrue(isSelectedRememberMeBox, "rememberMe box is not selected");
 		WebElement loginButton = driver.findElement(By.xpath("//button[@class=\"btn btn-primary\"]"));
 		loginButton.click();
+		WebElement loginName = driver.findElement(By.xpath("//span[text()=\"Admin \"]"));
+		String actualLoginName = loginName.getText();
+		String expectedLoginName = ExcelUtility.getStringData(0, 0, "LoginPage");
+		Assert.assertEquals(actualLoginName, expectedLoginName,"invalid login");
 
 	}
 
