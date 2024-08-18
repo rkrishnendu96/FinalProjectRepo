@@ -22,7 +22,7 @@ public class Base {
 			driver = new ChromeDriver();
 		} else if (browser.equals("Firefox")) {
 			driver = new FirefoxDriver();
-		} else if (browser.equals("Edge Driver")) {
+		} else if (browser.equals("Edge")) {
 			driver = new EdgeDriver();
 		} else {
 			throw new RuntimeException("Invalid Browser");
