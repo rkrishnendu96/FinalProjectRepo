@@ -1,5 +1,7 @@
 package pageObject;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -59,10 +61,18 @@ public class CreatePage {
 		emailField.sendKeys(email);
 	}
 
-/*	public void clickOnRole() {
+	public void clickOnRole() {
 		roleDropdownField.click();
 	}
-*/	public void enterUsername(String userName) {
+	
+	public void getRoleLists() {
+		
+	}
+	
+	
+	
+	
+	public void enterUsername(String userName) {
 		userNameRegisterField.sendKeys(userName);
 	}
 
@@ -90,5 +100,7 @@ public class CreatePage {
 		saveButtonField.click();
 		return new UsersPage(driver);
 	}
+
+	
 
 }

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.DateUtility;
+
 public class HomePage {
 	WebDriver driver;
 
@@ -27,6 +29,10 @@ public class HomePage {
 	WebElement adminButton;
 	@FindBy(xpath = "//a[text()=\"Sign Out\"]")
 	WebElement signoutButton;
+	@FindBy(xpath = "//i[@class=\"fa fa-briefcase\"]")
+	WebElement role;
+	@FindBy(xpath = "//div[@class=\"m-8 pull-left mt-15 hidden-xs\"]")
+	WebElement loginDateField;
 
 	public String getLoginText() {
 		String logNameText = loginName.getText();
@@ -59,6 +65,19 @@ public class HomePage {
 	public String getUserNameText() {
 		String userNameText = adminButton.getText();
 		return userNameText;
+	}
+
+	public EditRolesPage clickOnRole() {
+		role.click();
+		return new EditRolesPage(driver);
+	}
+
+	public String getLoginDate() {
+		String loginDate = loginDateField.getText();
+		return loginDate;
+	}
+	public String getCurrentDate() {
+		return DateUtility.getUserLoginDate("dd-MM-YYYY");
 	}
 
 }

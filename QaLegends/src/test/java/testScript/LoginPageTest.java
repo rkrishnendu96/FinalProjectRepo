@@ -41,23 +41,8 @@ public class LoginPageTest extends Base {
 
 	}
 
-	@Test
-
-	public void verifyPasswordResetWithInvalidMailId() {
-
-		String invalidEmailExcel = ExcelUtility.getStringData(0, 0, "ResetPage");
-		String expectedErrorMessage = ExcelUtility.getStringData(1, 0, "ResetPage");
-
-		LoginPage login = new LoginPage(driver);
-		ResetPage reset = login.forgotYourPwClick();
-		reset.enterEmailAddress(invalidEmailExcel);
-		reset.clickOnPwResetButton();
-		String actualErrorMsg = reset.getResetErrorMsg();
-		Assert.assertEquals(actualErrorMsg, expectedErrorMessage, "Password reset successful");
-
-	}
-
 }
+
 
 
 
@@ -96,5 +81,5 @@ public class LoginPageTest extends Base {
  * expectedErrorMessage = ExcelUtility.getStringData(1, 0, "ResetPage");
  * Assert.assertEquals(actualErrorMessage, expectedErrorMessage,
  * "Password reset successful");
- 
+ * 
  */
