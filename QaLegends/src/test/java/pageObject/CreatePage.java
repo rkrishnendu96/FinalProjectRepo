@@ -27,7 +27,7 @@ public class CreatePage {
 	@FindBy(xpath = "//span[@id=\"select2-role-container\"]")
 	WebElement roleDropdownField;
 	@FindBy(xpath = "//li[@class=\"select2-results__option\"]")
-	WebElement roleDropdownList;
+	List<WebElement> roleDropdownList;
 	@FindBy(xpath = "//input[@id=\"username\"]")
 	WebElement userNameRegisterField;
 	@FindBy(xpath = "//input[@id=\"password\"]")
@@ -41,7 +41,7 @@ public class CreatePage {
 	@FindBy(xpath = "//input[@class=\"select2-search__field\"]")
 	WebElement selectContactsDropdownField;
 	@FindBy(xpath = "//li[@class=\"select2-selection__choice\"]")
-	WebElement selectContactsDropdownList;
+	List<WebElement> selectContactsDropdownList;
 	@FindBy(xpath = "//button[@id=\"submit_user_button\"]")
 	WebElement saveButtonField;
 
@@ -64,14 +64,11 @@ public class CreatePage {
 	public void clickOnRole() {
 		roleDropdownField.click();
 	}
-	
-	public void getRoleLists() {
-		
+
+	public List<WebElement> getRoleLists() {
+		return roleDropdownList;
 	}
-	
-	
-	
-	
+
 	public void enterUsername(String userName) {
 		userNameRegisterField.sendKeys(userName);
 	}
@@ -87,20 +84,22 @@ public class CreatePage {
 	public void enterSalesCommission(String salesCommission) {
 		salesCommissionPercentageField.sendKeys(salesCommission);
 	}
-/*
-	public void clickOnAllowSelectedContact() {
-		allowSelectedContactCheckbox.click();
-	}
-
-	public void clickOnSelectContact() {
+	public void clickOnContacts() {
 		selectContactsDropdownField.click();
 	}
-	*/
+	public List<WebElement> selectContactList(){
+		return selectContactsDropdownList;
+	}
+
+	/*
+	 * public void clickOnAllowSelectedContact() {
+	 * allowSelectedContactCheckbox.click(); }
+	 * 
+	 * public void clickOnSelectContact() { selectContactsDropdownField.click(); }
+	 */
 	public UsersPage clickOnSaveButton() {
 		saveButtonField.click();
 		return new UsersPage(driver);
 	}
-
-	
 
 }

@@ -1,7 +1,10 @@
 package orh.automationcore;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -14,10 +17,27 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import constants.Constants;
+
 public class Base {
 	public WebDriver driver;
+	public FileInputStream file;
+	public Properties property;
 
 	public void initializeBrowser(String browser) {
+		property = new Properties();
+		try {
+			file = new FileInputStream(Constants.CONFIG_FILE);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		try {
+			property.load(file);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 		if (browser.equals("Chrome")) {
 			driver = new ChromeDriver();
 		} else if (browser.equals("Firefox")) {
@@ -27,8 +47,9 @@ public class Base {
 		} else {
 			throw new RuntimeException("Invalid Browser");
 		}
-		driver.get("https://qalegend.com/billing/public/login");
+	//	driver.get("https://qalegend.com/billing/public/login");
 		driver.manage().window().maximize();
+		driver.get(property.getProperty("url"));
 	}
 
 	@BeforeMethod
@@ -41,7 +62,7 @@ public class Base {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			takeScreenshot(result);
 		}
-		//driver.quit();
+		driver.quit();
 	}
 
 	public void takeScreenshot(ITestResult result) throws IOException {

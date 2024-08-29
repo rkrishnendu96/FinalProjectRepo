@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-26T00:56:41 IST" name="Default suite" finished-at="2024-08-26T00:57:45 IST" duration-ms="63521">
+  <suite started-at="2024-08-30T02:59:20 IST" name="Default suite" finished-at="2024-08-30T02:59:37 IST" duration-ms="17613">
     <groups>
     </groups>
-    <test started-at="2024-08-26T00:56:41 IST" name="Default test" finished-at="2024-08-26T00:57:45 IST" duration-ms="63521">
+    <test started-at="2024-08-30T02:59:20 IST" name="Default test" finished-at="2024-08-30T02:59:37 IST" duration-ms="17613">
       <class name="testScript.RegisterPageTest">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScript.RegisterPageTest@689604d9]" started-at="2024-08-26T00:56:41 IST" name="setBrowser" finished-at="2024-08-26T00:57:02 IST" duration-ms="20422" status="PASS">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScript.RegisterPageTest@4d154ccd]" started-at="2024-08-30T02:59:20 IST" name="setBrowser" finished-at="2024-08-30T02:59:36 IST" duration-ms="16132" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="VerifyRegisterPage()[pri:0, instance:testScript.RegisterPageTest@689604d9]" started-at="2024-08-26T00:57:02 IST" name="VerifyRegisterPage" finished-at="2024-08-26T00:57:42 IST" duration-ms="39946" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+        <test-method signature="verifyUserLoginWithNewlyAddedUser()[pri:0, instance:testScript.RegisterPageTest@4d154ccd]" started-at="2024-08-30T02:59:36 IST" name="verifyUserLoginWithNewlyAddedUser" finished-at="2024-08-30T02:59:36 IST" duration-ms="35" status="FAIL">
+          <exception class="java.lang.RuntimeException">
             <message>
-              <![CDATA[Cannot invoke "java.util.List.size()" because "roleDropdownList" is null]]>
+              <![CDATA[Excel sheet not found]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "roleDropdownList" is null
-at utilities.PageUtility.selectByIndexFromDropdown(PageUtility.java:16)
-at testScript.RegisterPageTest.VerifyRegisterPage(RegisterPageTest.java:43)
+              <![CDATA[java.lang.RuntimeException: Excel sheet not found
+at utilities.ExcelUtility.getStringData(ExcelUtility.java:28)
+at testScript.RegisterPageTest.verifyUserLoginWithNewlyAddedUser(RegisterPageTest.java:59)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -50,15 +50,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyRegisterPage -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testScript.RegisterPageTest@689604d9]" started-at="2024-08-26T00:57:44 IST" name="closeBrowser" finished-at="2024-08-26T00:57:45 IST" duration-ms="1213" status="PASS">
+        </test-method> <!-- verifyUserLoginWithNewlyAddedUser -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testScript.RegisterPageTest@4d154ccd]" started-at="2024-08-30T02:59:36 IST" name="closeBrowser" finished-at="2024-08-30T02:59:37 IST" duration-ms="1220" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyRegisterPage status=FAILURE method=RegisterPageTest.VerifyRegisterPage()[pri:0, instance:testScript.RegisterPageTest@689604d9] output={null}]]]>
+                <![CDATA[[TestResult name=verifyUserLoginWithNewlyAddedUser status=FAILURE method=RegisterPageTest.verifyUserLoginWithNewlyAddedUser()[pri:0, instance:testScript.RegisterPageTest@4d154ccd] output={null}]]]>
               </value>
             </param>
           </params>

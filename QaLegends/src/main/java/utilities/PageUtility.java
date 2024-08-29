@@ -12,7 +12,7 @@ public class PageUtility {
 		select.selectByValue(value);
 	}
 
-	public static void selectByIndexFromDropdown(List <WebElement> roleDropdownList, String option) {
+	public static void selectOption(List<WebElement> roleDropdownList, String option) {
 		for (int i = 0; i < roleDropdownList.size(); i++) {
 			if (roleDropdownList.get(i).getText().equals(option)) {
 				roleDropdownList.get(i).click();

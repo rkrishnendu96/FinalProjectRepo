@@ -5,7 +5,7 @@
     <classes>
       <class name="testScript.RegisterPageTest">
         <methods>
-          <include name="VerifyRegisterPage"/>
+          <include name="verifyUserLoginWithNewlyAddedUser"/>
           <include name="closeBrowser"/>
           <include name="setBrowser"/>
         </methods>

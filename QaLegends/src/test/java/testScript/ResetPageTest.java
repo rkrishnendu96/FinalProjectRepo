@@ -3,6 +3,7 @@ package testScript;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import orh.automationcore.Base;
 import pageObject.LoginPage;
 import pageObject.ResetPage;
@@ -13,8 +14,8 @@ public class ResetPageTest extends Base {
 	@Test
 	public void verifyPasswordResetWithValidMailId() {
 
-		String validEmailExcel = ExcelUtility.getStringData(2, 0, "ResetPage");
-		String expectedMessage = ExcelUtility.getStringData(3, 0, "ResetPage");
+		String validEmailExcel = ExcelUtility.getStringData(2, 0, Constants.RESET_PAGE);
+		String expectedMessage = ExcelUtility.getStringData(3, 0, Constants.RESET_PAGE);
 
 		LoginPage login = new LoginPage(driver);
 		ResetPage reset = login.forgotYourPwClick();
@@ -27,8 +28,8 @@ public class ResetPageTest extends Base {
 
 	@Test
 	public void verifyPasswordResetWithInvalidMailId() {
-		String invalidEmailExcel = ExcelUtility.getStringData(0, 0, "ResetPage");
-		String expectedErrorMessage = ExcelUtility.getStringData(1, 0, "ResetPage");
+		String invalidEmailExcel = ExcelUtility.getStringData(0, 0, Constants.RESET_PAGE);
+		String expectedErrorMessage = ExcelUtility.getStringData(1, 0, Constants.RESET_PAGE);
 
 		LoginPage login = new LoginPage(driver);
 		ResetPage reset = login.forgotYourPwClick();

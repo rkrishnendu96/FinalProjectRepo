@@ -73,9 +73,9 @@ public class HomePage {
 	}
 
 	public String getLoginDate() {
-		String loginDate = loginDateField.getText();
-		return loginDate;
+		return loginDateField.getText();
 	}
+
 	public String getCurrentDate() {
 		return DateUtility.getUserLoginDate("dd-MM-YYYY");
 	}

@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Dell-i5\AppData\Local\Temp\testng-eclipse-2015408507\testng-customsuite.xml</span>
+                    <span>C:\Users\Dell-i5\AppData\Local\Temp\testng-eclipse--1832631740\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testScript.RegisterPageTest" class="method navigator-link" hash-for-method="VerifyRegisterPage">VerifyRegisterPage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="testScript.RegisterPageTest" class="method navigator-link" hash-for-method="verifyUserLoginWithNewlyAddedUser">verifyUserLoginWithNewlyAddedUser</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -126,12 +126,12 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="VerifyRegisterPage">
-                  </a> <!-- VerifyRegisterPage -->
-                  <span class="method-name">VerifyRegisterPage</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.List.size()&quot; because &quot;roleDropdownList&quot; is null
-	at utilities.PageUtility.selectByIndexFromDropdown(PageUtility.java:16)
-	at testScript.RegisterPageTest.VerifyRegisterPage(RegisterPageTest.java:43)
+                  <a name="verifyUserLoginWithNewlyAddedUser">
+                  </a> <!-- verifyUserLoginWithNewlyAddedUser -->
+                  <span class="method-name">verifyUserLoginWithNewlyAddedUser</span>
+                  <div class="stack-trace">java.lang.RuntimeException: Excel sheet not found
+	at utilities.ExcelUtility.getStringData(ExcelUtility.java:28)
+	at testScript.RegisterPageTest.verifyUserLoginWithNewlyAddedUser(RegisterPageTest.java:59)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -169,7 +169,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Dell-i5\AppData\Local\Temp\testng-eclipse-2015408507\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Dell-i5\AppData\Local\Temp\testng-eclipse--1832631740\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -180,7 +180,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;testScript.RegisterPageTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;VerifyRegisterPage&quot;/&gt;
+          &lt;include name=&quot;verifyUserLoginWithNewlyAddedUser&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- testScript.RegisterPageTest --&gt;
     &lt;/classes&gt;
@@ -224,14 +224,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'VerifyRegisterPage')
+data.setCell(0, 1, 'verifyUserLoginWithNewlyAddedUser')
 data.setCell(0, 2, 'testScript.RegisterPageTest')
-data.setCell(0, 3, 39946);
+data.setCell(0, 3, 35);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 39 seconds</span>
+              <span class="suite-total-time">Total running time: 35 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -252,7 +252,7 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">testScript.RegisterPageTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyUserLoginWithNewlyAddedUser</span>
+                <span class="ignored-method-name">VerifyRegisterPage</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -272,12 +272,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">VerifyRegisterPage</span>
-                <span class="method-start">20427 ms</span>
+                <span class="method-name">verifyUserLoginWithNewlyAddedUser</span>
+                <span class="method-start">16141 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">closeBrowser([TestResult name=VerifyRegisterPage status=FAILURE method=RegisterPageTest.VerifyRegisterPage()[pri:...)</span>
-                <span class="method-start">62158 ms</span>
+                <span class="method-name">closeBrowser([TestResult name=verifyUserLoginWithNewlyAddedUser status=FAILURE method=RegisterPageTest.verifyUser...)</span>
+                <span class="method-start">16197 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

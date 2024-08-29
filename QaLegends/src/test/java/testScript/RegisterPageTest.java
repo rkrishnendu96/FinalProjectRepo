@@ -3,6 +3,7 @@ package testScript;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import orh.automationcore.Base;
 import pageObject.CreatePage;
 import pageObject.HomePage;
@@ -16,16 +17,18 @@ public class RegisterPageTest extends Base {
 	@Test
 	public void VerifyRegisterPage() {
 
-		String usernameExcel = ExcelUtility.getStringData(0, 0, "LoginPage");
-		String passwordExcel = ExcelUtility.getIntegerData(0, 1, "LoginPage");
-		String prefixExcel = ExcelUtility.getStringData(0, 0, "RegisterPage");
+		String usernameExcel = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
+		String passwordExcel = ExcelUtility.getIntegerData(0, 1, Constants.LOGIN_PAGE);
+		String prefixExcel = ExcelUtility.getStringData(0, 0, Constants.REGISTER_PAGE);
 		String firstNameFake = RandomDataUtility.getFirstName(); // using faker
 		String lastaNameFake = RandomDataUtility.getLastName();
-		String emailFake = firstNameFake + "." + lastaNameFake + "@" + "gmail.com";
-		String roleExcel = ExcelUtility.getStringData(6,1, "RegisterPage");
-		String userNameRegisterFake = firstNameFake + "2001";
-		String passwordRegisterFake = firstNameFake + "." + lastaNameFake;
-		String salesCommissionExcel = ExcelUtility.getIntegerData(5, 1, "RegisterPage");
+		String emailFake = firstNameFake + Constants.DOT_SIGN + lastaNameFake + Constants.AT_SIGN
+				+ Constants.MAIL_EXTENSION;
+		String roleExcel = ExcelUtility.getStringData(6, 1, Constants.REGISTER_PAGE);
+		String userNameRegisterFake = firstNameFake + Constants.USERNAME_DIGIT;
+		String passwordRegisterFake = firstNameFake + Constants.DOT_SIGN + lastaNameFake;
+		String salesCommissionExcel = ExcelUtility.getIntegerData(5, 1, Constants.REGISTER_PAGE);
+		String contactsExcel = ExcelUtility.getIntegerData(7, 1, Constants.REGISTER_PAGE);
 
 		LoginPage login = new LoginPage(driver);
 		login.enterUsername(usernameExcel);
@@ -40,11 +43,12 @@ public class RegisterPageTest extends Base {
 		create.enterLastName(lastaNameFake);
 		create.enterEmail(emailFake);
 		create.clickOnRole();
-	//	PageUtility.selectByIndexFromDropdown(create.getRoleLists(), roleExcel);
+		PageUtility.selectOption(create.getRoleLists(), roleExcel);
 		create.enterUsername(userNameRegisterFake);
 		create.enterPassword(passwordRegisterFake);
 		create.enterConfirmPassword(passwordRegisterFake);
 		create.enterSalesCommission(salesCommissionExcel);
+		PageUtility.selectOption(create.selectContactList(), contactsExcel);
 		users = create.clickOnSaveButton();
 		users.enterSearch(firstNameFake);
 	}
@@ -52,15 +56,15 @@ public class RegisterPageTest extends Base {
 	@Test
 	public void verifyUserLoginWithNewlyAddedUser() {
 
-		String usernameExcel = ExcelUtility.getStringData(0, 0, "LoginPage");
-		String passwordExcel = ExcelUtility.getIntegerData(0, 1, "LoginPage");
-		String prefixExcel = ExcelUtility.getStringData(0, 0, "RegisterPage");
+		String usernameExcel = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
+		String passwordExcel = ExcelUtility.getIntegerData(0, 1, Constants.LOGIN_PAGE);
+		String prefixExcel = ExcelUtility.getStringData(0, 0, Constants.REGISTER_PAGE);
 		String firstNameFake = RandomDataUtility.getFirstName(); // using faker
 		String lastaNameFake = RandomDataUtility.getLastName();
 		String emailFake = firstNameFake + "." + lastaNameFake + "@" + "gmail.com";
 		String userNameRegisterFake = firstNameFake + "2001";
 		String passwordRegisterFake = firstNameFake + "." + lastaNameFake;
-		String salesCommissionExcel = ExcelUtility.getIntegerData(5, 1, "RegisterPage");
+		String salesCommissionExcel = ExcelUtility.getIntegerData(5, 1, Constants.REGISTER_PAGE);
 
 		LoginPage login = new LoginPage(driver);
 		login.enterUsername(usernameExcel);
@@ -92,11 +96,6 @@ public class RegisterPageTest extends Base {
 
 	}
 }
-
-
-
-
-
 
 /*
  * ///////////////// admin login////////////////
@@ -137,19 +136,19 @@ public class RegisterPageTest extends Base {
  * lastName.sendKeys(lastaNameFake); WebElement email =
  * driver.findElement(By.xpath("//input[@id=\"email\"]"));
  * email.sendKeys(emailFake); String roleExcel = ExcelUtility.getStringData(6,
- * 1, "RegisterPage"); 
- * WebElement roleDropdown =
+ * 1, "RegisterPage"); WebElement roleDropdown =
  * driver.findElement(By.xpath("//span[@id=\"select2-role-container\"]"));
- * roleDropdown.click(); 
+ * roleDropdown.click();
  * 
  * 
- * List<WebElement> roleDropdownList =driver.findElements(By.xpath("//li[@class=\"select2-results__option\"]"));
+ * List<WebElement> roleDropdownList
+ * =driver.findElements(By.xpath("//li[@class=\"select2-results__option\"]"));
  * for (int i = 0; i < roleDropdownList.size(); i++) { if
  * (roleDropdownList.get(i).getText().equals(roleExcel)) {
  * roleDropdownList.get(i).click(); break; } }
  * 
- *  
- *  WebElement userNameRegister =
+ * 
+ * WebElement userNameRegister =
  * driver.findElement(By.xpath("//input[@id=\"username\"]"));
  * userNameRegister.sendKeys(userNameRegisterFake); WebElement
  * userPasswordRegister =

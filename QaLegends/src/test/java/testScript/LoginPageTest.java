@@ -1,23 +1,20 @@
 package testScript;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import constants.Constants;
 import dataprovider.DataProviders;
 import orh.automationcore.Base;
 import pageObject.HomePage;
 import pageObject.LoginPage;
-import pageObject.ResetPage;
 import utilities.ExcelUtility;
 
 public class LoginPageTest extends Base {
 	@Test
 	public void verifyValidUsercredential() {
-		String usernameExcel = ExcelUtility.getStringData(0, 0, "LoginPage");
-		String passwordExcel = ExcelUtility.getIntegerData(0, 1, "LoginPage");
-		String expectedLoginName = ExcelUtility.getStringData(0, 0, "LoginPage");
+		String usernameExcel = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
+		String passwordExcel = ExcelUtility.getIntegerData(0, 1, Constants.LOGIN_PAGE);
+		String expectedLoginName = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
 
 		LoginPage login = new LoginPage(driver);
 		login.enterUsername(usernameExcel);
@@ -30,7 +27,7 @@ public class LoginPageTest extends Base {
 	@Test(dataProvider = "invalidUserCredentials", dataProviderClass = DataProviders.class)
 	public void verifyErrorMessageWithInvalidCredentials(String usernameData, String passwordData) {
 
-		String expectedErrorMessage = ExcelUtility.getStringData(1, 0, "LoginPage");
+		String expectedErrorMessage = ExcelUtility.getStringData(1, 0, Constants.LOGIN_PAGE);
 
 		LoginPage login = new LoginPage(driver);
 		login.enterUsername(usernameData);

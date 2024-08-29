@@ -9,13 +9,13 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">63,521</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">17,613</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">testScript.RegisterPageTest</td><td><a href="#m0">VerifyRegisterPage</a></td><td rowspan="1">1724614022395</td><td rowspan="1">39946</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">testScript.RegisterPageTest</td><td><a href="#m0">verifyUserLoginWithNewlyAddedUser</a></td><td rowspan="1">1724966976447</td><td rowspan="1">35</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">testScript.RegisterPageTest#VerifyRegisterPage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.util.List.size()&quot; because &quot;roleDropdownList&quot; is null
-	at utilities.PageUtility.selectByIndexFromDropdown(PageUtility.java:16)
-	at testScript.RegisterPageTest.VerifyRegisterPage(RegisterPageTest.java:43)
+<h2>Default test</h2><h3 id="m0">testScript.RegisterPageTest#verifyUserLoginWithNewlyAddedUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: Excel sheet not found
+	at utilities.ExcelUtility.getStringData(ExcelUtility.java:28)
+	at testScript.RegisterPageTest.verifyUserLoginWithNewlyAddedUser(RegisterPageTest.java:59)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
