@@ -13,7 +13,7 @@ import utilities.ExcelUtility;
 import utilities.RandomDataUtility;
 
 public class HomePageTest extends Base {
-	@Test
+	@Test(groups="Sanity")
 	public void verifyHomePageTitle() {
 		String usernameExcel = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
 		String passwordExcel = ExcelUtility.getIntegerData(0, 1, Constants.LOGIN_PAGE);
@@ -29,7 +29,7 @@ public class HomePageTest extends Base {
 		Assert.assertEquals(actualHomePageTitle, expectedHomePageTitle, Messages.MISMATCH_PAGETITLE);
 	}
 
-	@Test
+	@Test(groups="Smoke")
 	public void verifyUserloginDate() {
 		String usernameExcel = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
 		String passwordExcel = ExcelUtility.getIntegerData(0, 1, Constants.LOGIN_PAGE);

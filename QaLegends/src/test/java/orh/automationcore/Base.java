@@ -16,6 +16,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import constants.Constants;
 
@@ -40,29 +41,30 @@ public class Base {
 
 		if (browser.equals("Chrome")) {
 			driver = new ChromeDriver();
-		} else if (browser.equals("Firefox")) {
+		} else if (browser.equals("FireFox")) {
 			driver = new FirefoxDriver();
 		} else if (browser.equals("Edge")) {
 			driver = new EdgeDriver();
 		} else {
 			throw new RuntimeException("Invalid Browser");
 		}
-	//	driver.get("https://qalegend.com/billing/public/login");
+		// driver.get("https://qalegend.com/billing/public/login");
 		driver.manage().window().maximize();
 		driver.get(property.getProperty("url"));
 	}
 
-	@BeforeMethod
-	public void setBrowser() {
-		initializeBrowser("Chrome");
+	@BeforeMethod(alwaysRun = true)
+	@Parameters("browser")
+	public void setBrowser(String browserName) {
+		initializeBrowser(browserName);
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void closeBrowser(ITestResult result) throws IOException {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			takeScreenshot(result);
 		}
-		//driver.quit();
+		 driver.quit();
 	}
 
 	public void takeScreenshot(ITestResult result) throws IOException {

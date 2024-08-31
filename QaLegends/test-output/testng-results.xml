@@ -1,32 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-01T01:10:09 IST" name="Default suite" finished-at="2024-09-01T01:10:47 IST" duration-ms="38170">
+  <suite started-at="2024-09-01T03:41:14 IST" name="Suite" finished-at="2024-09-01T03:42:57 IST" duration-ms="102403">
     <groups>
+      <group name="Smoke">
+        <method signature="ResetPageTest.verifyPasswordResetWithInvalidMailId()[pri:0, instance:testScript.ResetPageTest@5d43661b]" name="verifyPasswordResetWithInvalidMailId" class="testScript.ResetPageTest"/>
+      </group> <!-- Smoke -->
     </groups>
-    <test started-at="2024-09-01T01:10:09 IST" name="Default test" finished-at="2024-09-01T01:10:47 IST" duration-ms="38170">
-      <class name="testScript.ProductsImportTest">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScript.ProductsImportTest@4d154ccd]" started-at="2024-09-01T01:10:09 IST" name="setBrowser" finished-at="2024-09-01T01:10:27 IST" duration-ms="17692" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setBrowser -->
-        <test-method signature="verifyImportWithUploadingFile()[pri:0, instance:testScript.ProductsImportTest@4d154ccd]" started-at="2024-09-01T01:10:27 IST" name="verifyImportWithUploadingFile" finished-at="2024-09-01T01:10:47 IST" duration-ms="20179" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyImportWithUploadingFile -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testScript.ProductsImportTest@4d154ccd]" started-at="2024-09-01T01:10:47 IST" name="closeBrowser" finished-at="2024-09-01T01:10:47 IST" duration-ms="23" status="PASS">
+    <test started-at="2024-09-01T03:41:14 IST" name="Test" finished-at="2024-09-01T03:42:57 IST" duration-ms="102403">
+      <class name="testScript.ResetPageTest">
+        <test-method is-config="true" signature="setBrowser(java.lang.String)[pri:0, instance:testScript.ResetPageTest@5d43661b]" started-at="2024-09-01T03:41:15 IST" name="setBrowser" finished-at="2024-09-01T03:42:10 IST" duration-ms="54989" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyImportWithUploadingFile status=SUCCESS method=ProductsImportTest.verifyImportWithUploadingFile()[pri:0, instance:testScript.ProductsImportTest@4d154ccd] output={null}]]]>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="verifyPasswordResetWithInvalidMailId()[pri:0, instance:testScript.ResetPageTest@5d43661b]" started-at="2024-09-01T03:42:10 IST" name="verifyPasswordResetWithInvalidMailId" finished-at="2024-09-01T03:42:28 IST" duration-ms="18222" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPasswordResetWithInvalidMailId -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testScript.ResetPageTest@5d43661b]" started-at="2024-09-01T03:42:28 IST" name="closeBrowser" finished-at="2024-09-01T03:42:31 IST" duration-ms="2303" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPasswordResetWithInvalidMailId status=SUCCESS method=ResetPageTest.verifyPasswordResetWithInvalidMailId()[pri:0, instance:testScript.ResetPageTest@5d43661b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- testScript.ProductsImportTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        <test-method is-config="true" signature="setBrowser(java.lang.String)[pri:0, instance:testScript.ResetPageTest@5d43661b]" started-at="2024-09-01T03:42:31 IST" name="setBrowser" finished-at="2024-09-01T03:42:52 IST" duration-ms="20980" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="verifyPasswordResetWithValidMailId()[pri:0, instance:testScript.ResetPageTest@5d43661b]" started-at="2024-09-01T03:42:52 IST" name="verifyPasswordResetWithValidMailId" finished-at="2024-09-01T03:42:56 IST" duration-ms="4408" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPasswordResetWithValidMailId -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testScript.ResetPageTest@5d43661b]" started-at="2024-09-01T03:42:56 IST" name="closeBrowser" finished-at="2024-09-01T03:42:57 IST" duration-ms="822" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPasswordResetWithValidMailId status=SUCCESS method=ResetPageTest.verifyPasswordResetWithValidMailId()[pri:0, instance:testScript.ResetPageTest@5d43661b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testScript.ResetPageTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

@@ -10,7 +10,7 @@ import pageObject.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginPageTest extends Base {
-	@Test
+	@Test(groups= {"Sanity","Regression"})
 	public void verifyValidUsercredential() {
 		String usernameExcel = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
 		String passwordExcel = ExcelUtility.getIntegerData(0, 1, Constants.LOGIN_PAGE);

@@ -26,7 +26,7 @@ public class ResetPageTest extends Base {
 		Assert.assertEquals(actualMsg, expectedMessage, Messages.UNSUCCESSFULL_PASSWORD_RESET);
 	}
 
-	@Test
+	@Test(groups="Smoke")
 	public void verifyPasswordResetWithInvalidMailId() {
 		String invalidEmailExcel = ExcelUtility.getStringData(0, 0, Constants.RESET_PAGE);
 		String expectedErrorMessage = ExcelUtility.getStringData(1, 0, Constants.RESET_PAGE);
