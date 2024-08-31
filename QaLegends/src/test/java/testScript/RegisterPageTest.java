@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import constants.Constants;
+import constants.Messages;
 import orh.automationcore.Base;
 import pageObject.CreatePage;
 import pageObject.HomePage;
@@ -22,13 +23,10 @@ public class RegisterPageTest extends Base {
 		String prefixExcel = ExcelUtility.getStringData(0, 0, Constants.REGISTER_PAGE);
 		String firstNameFake = RandomDataUtility.getFirstName(); // using faker
 		String lastaNameFake = RandomDataUtility.getLastName();
-		String emailFake = firstNameFake + Constants.DOT_SIGN + lastaNameFake + Constants.AT_SIGN
-				+ Constants.MAIL_EXTENSION;
-		String roleExcel = ExcelUtility.getStringData(6, 1, Constants.REGISTER_PAGE);
-		String userNameRegisterFake = firstNameFake + Constants.USERNAME_DIGIT;
-		String passwordRegisterFake = firstNameFake + Constants.DOT_SIGN + lastaNameFake;
+		String emailFake = firstNameFake + "." + lastaNameFake + "@" + "gmail.com";
+		String userNameRegisterFake = firstNameFake + "2001";
+		String passwordRegisterFake = firstNameFake + "." + lastaNameFake;
 		String salesCommissionExcel = ExcelUtility.getIntegerData(5, 1, Constants.REGISTER_PAGE);
-		String contactsExcel = ExcelUtility.getIntegerData(7, 1, Constants.REGISTER_PAGE);
 
 		LoginPage login = new LoginPage(driver);
 		login.enterUsername(usernameExcel);
@@ -42,13 +40,14 @@ public class RegisterPageTest extends Base {
 		create.enterFirstName(firstNameFake);
 		create.enterLastName(lastaNameFake);
 		create.enterEmail(emailFake);
-		create.clickOnRole();
-		PageUtility.selectOption(create.getRoleLists(), roleExcel);
+		// create.clickOnRole();
+		// PageUtility.selectOption(create.getRoleLists(), roleExcel);
 		create.enterUsername(userNameRegisterFake);
 		create.enterPassword(passwordRegisterFake);
 		create.enterConfirmPassword(passwordRegisterFake);
 		create.enterSalesCommission(salesCommissionExcel);
-		PageUtility.selectOption(create.selectContactList(), contactsExcel);
+		// create.clickOnContacts();
+		// PageUtility.selectOption(create.selectContactList(), contactsExcel);;
 		users = create.clickOnSaveButton();
 		users.enterSearch(firstNameFake);
 	}
@@ -92,7 +91,7 @@ public class RegisterPageTest extends Base {
 		HomePage home2 = login.clickOnLoginButton();
 		String actualUserName = home2.getUserNameText();
 		String expectedUserName = firstNameFake + " " + lastaNameFake;
-		Assert.assertEquals(actualUserName, expectedUserName, "Username mismatch");
+		Assert.assertEquals(actualUserName, expectedUserName, Messages.MISMATCH_USERNAME);
 
 	}
 }

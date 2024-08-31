@@ -2,6 +2,8 @@ package utilities;
 
 import java.util.List;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -27,13 +29,10 @@ public class PageUtility {
 		Select select = new Select(element);
 		select.selectByVisibleText(text);
 	}
-	/*
-	 * public static void getDropdownvalues(WebElement element) { for (int i = 0; i
-	 * < selectContactsDropdownList.size(); i++) { if
-	 * (selectContactsDropdownList.get(i).getText().equals(
-	 * selectContactsDropdownExcel)) { selectContactsDropdownList.get(i).click();
-	 * break; } }
-	 * 
-	 * }
-	 */
+
+	public static void getAlertMessage(WebDriver driver) {
+		Alert alert = driver.switchTo().alert();
+		String alertMessage = alert.getText();
+	}
+
 }

@@ -62,7 +62,7 @@ public class Base {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			takeScreenshot(result);
 		}
-		driver.quit();
+		//driver.quit();
 	}
 
 	public void takeScreenshot(ITestResult result) throws IOException {

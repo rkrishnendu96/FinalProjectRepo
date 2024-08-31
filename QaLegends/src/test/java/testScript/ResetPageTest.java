@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import constants.Constants;
+import constants.Messages;
 import orh.automationcore.Base;
 import pageObject.LoginPage;
 import pageObject.ResetPage;
@@ -22,8 +23,7 @@ public class ResetPageTest extends Base {
 		reset.enterEmailAddress(validEmailExcel);
 		reset.clickOnPwResetButton();
 		String actualMsg = reset.getResetValidMsg();
-		Assert.assertEquals(actualMsg, expectedMessage, "Password reset not successful");
-
+		Assert.assertEquals(actualMsg, expectedMessage, Messages.UNSUCCESSFULL_PASSWORD_RESET);
 	}
 
 	@Test
@@ -36,8 +36,7 @@ public class ResetPageTest extends Base {
 		reset.enterEmailAddress(invalidEmailExcel);
 		reset.clickOnPwResetButton();
 		String actualErrorMsg = reset.getResetErrorMsg();
-		Assert.assertEquals(actualErrorMsg, expectedErrorMessage, "Password reset successful");
-
+		Assert.assertEquals(actualErrorMsg, expectedErrorMessage, Messages.SUCCESSFULL_PASSWORD_RESET);
 	}
 
 }

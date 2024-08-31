@@ -1,8 +1,8 @@
 package testScript;
-
+import constants.Constants;
+import constants.Messages;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import constants.Constants;
 import dataprovider.DataProviders;
 import orh.automationcore.Base;
 import pageObject.HomePage;
@@ -21,7 +21,7 @@ public class LoginPageTest extends Base {
 		login.enterPassword(passwordExcel);
 		HomePage home = login.clickOnLoginButton();
 		String actualText = home.getLoginText();
-		Assert.assertEquals(actualText, expectedLoginName, "invalid login");
+		Assert.assertEquals(actualText, expectedLoginName,Messages.INVALID_LOGIN);
 	}
 
 	@Test(dataProvider = "invalidUserCredentials", dataProviderClass = DataProviders.class)
@@ -34,7 +34,7 @@ public class LoginPageTest extends Base {
 		login.enterPassword(passwordData);
 		login.clickOnLoginButton();
 		String actualErrorText = login.getActualErrorMessageText();
-		Assert.assertEquals(actualErrorText, expectedErrorMessage, "valid login");
+		Assert.assertEquals(actualErrorText, expectedErrorMessage, Messages.VALID_LOGIN);
 
 	}
 

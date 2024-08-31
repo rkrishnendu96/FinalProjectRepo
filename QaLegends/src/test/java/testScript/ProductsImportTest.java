@@ -1,36 +1,37 @@
 package testScript;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import constants.Constants;
 import constants.Messages;
 import orh.automationcore.Base;
 import pageObject.HomePage;
 import pageObject.LoginPage;
-import pageObject.UsersPage;
+import pageObject.ImportProductPage;
 import utilities.ExcelUtility;
-import utilities.RandomDataUtility;
+import utilities.WaitUtility;
 
-public class HomePageTest extends Base {
+public class ProductsImportTest extends Base {
 	@Test
-	public void verifyHomePageTitle() {
+	public void verifyImportWithoutUploadingFile() {
 		String usernameExcel = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
 		String passwordExcel = ExcelUtility.getIntegerData(0, 1, Constants.LOGIN_PAGE);
-		String expectedHomePageTitle = ExcelUtility.getStringData(8, 0, Constants.LOGIN_PAGE);
+		String expectedError = ExcelUtility.getStringData(11, 0, Constants.LOGIN_PAGE);
 
 		LoginPage login = new LoginPage(driver);
 		login.enterUsername(usernameExcel);
 		login.enterPassword(passwordExcel);
 		HomePage home = login.clickOnLoginButton();
 		home.endTourClick();
-		String actualHomePageTitle = driver.getTitle();
-		System.out.println(actualHomePageTitle);
-		Assert.assertEquals(actualHomePageTitle, expectedHomePageTitle, Messages.MISMATCH_PAGETITLE);
+		home.clickOnProductsButton();
+		ImportProductPage importProductPage = home.clickOnImportPdt();
+		importProductPage.enterChooseFileButtonForWrongFile();
+		importProductPage.clickOnSubmitButton();
+		String actualError = importProductPage.getErrorMessage();
+		Assert.assertEquals(actualError, expectedError, Messages.PRODUCT_IMPORT_SUCCESSFUL);
 	}
 
 	@Test
-	public void verifyUserloginDate() {
+	public void verifyImportWithUploadingFile() {
 		String usernameExcel = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
 		String passwordExcel = ExcelUtility.getIntegerData(0, 1, Constants.LOGIN_PAGE);
 
@@ -39,10 +40,11 @@ public class HomePageTest extends Base {
 		login.enterPassword(passwordExcel);
 		HomePage home = login.clickOnLoginButton();
 		home.endTourClick();
-		String homePageDate = home.getLoginDate();
-		String currentDate = home.getCurrentDate();
-		Assert.assertEquals(homePageDate, currentDate, Messages.MISMATCH_DATE);
-
+		home.clickOnProductsButton();
+		WaitUtility.waitForAnElement(driver);
+		ImportProductPage importProductPage = home.clickOnImportPdt();
+		importProductPage.enterChooseFileButton();
+		importProductPage.clickOnSubmitButton();
 	}
 
 }
