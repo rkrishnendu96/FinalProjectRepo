@@ -33,14 +33,10 @@ public class HomePage {
 	WebElement role;
 	@FindBy(xpath = "//div[@class=\"m-8 pull-left mt-15 hidden-xs\"]")
 	WebElement loginDateField;
-	@FindBy(xpath="//a[text()=\"Profile\"]")
+	@FindBy(xpath = "//a[text()=\"Profile\"]")
 	WebElement profileButton;
 	@FindBy(xpath = "//i[@class=\"fa fa-dashboard\"]")
 	WebElement homeButton;
-	@FindBy(xpath="//span[text()=\"Products\"]")
-	WebElement productButton;
-	@FindBy(xpath="//span[text()=\"Import Products\"]")
-	WebElement importPdtButton;
 
 	public String getLoginText() {
 		String logNameText = loginName.getText();
@@ -75,11 +71,6 @@ public class HomePage {
 		return userNameText;
 	}
 
-	public EditRolesPage clickOnRole() {
-		role.click();
-		return new EditRolesPage(driver);
-	}
-
 	public String getLoginDate() {
 		return loginDateField.getText();
 	}
@@ -87,20 +78,15 @@ public class HomePage {
 	public String getCurrentDate() {
 		return DateUtility.getUserLoginDate("dd-MM-YYYY");
 	}
+
 	public ProfilePage clickOnProfileButton() {
 		profileButton.click();
 		return new ProfilePage(driver);
 	}
+
 	public HomePage clickOnHomeButton() {
 		homeButton.click();
 		return new HomePage(driver);
-	}
-	public void clickOnProductsButton() {
-		productButton.click();
-	}
-	public ImportProductPage clickOnImportPdt() {
-		importPdtButton.click();
-		return new ImportProductPage(driver);
 	}
 
 }

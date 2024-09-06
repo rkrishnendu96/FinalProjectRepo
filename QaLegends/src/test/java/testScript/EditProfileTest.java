@@ -30,11 +30,7 @@ public class EditProfileTest extends Base {
 		ProfilePage profilePage = home.clickOnProfileButton();
 		profilePage.enterMailId(expectedEmailFake);
 		profilePage.clickOnUpdateButton();
-		home.clickOnHomeButton();
-		home.clickOnAdminButton();
-		profilePage = home.clickOnProfileButton();
-		//String actualEmail = profilePage.getUpdatedEmailText();
-		//Assert.assertEquals(actualEmail, expectedEmailFake, Messages.EMAIL_UPDATE_FAILED);
+		Assert.assertTrue(profilePage.isProfileUpdateMsgDisplayed(), Messages.EMAIL_UPDATE_FAILED);
 	}
 
 }

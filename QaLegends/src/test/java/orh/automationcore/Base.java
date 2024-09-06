@@ -48,7 +48,6 @@ public class Base {
 		} else {
 			throw new RuntimeException("Invalid Browser");
 		}
-		// driver.get("https://qalegend.com/billing/public/login");
 		driver.manage().window().maximize();
 		driver.get(property.getProperty("url"));
 	}
@@ -64,7 +63,7 @@ public class Base {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			takeScreenshot(result);
 		}
-		 driver.quit();
+		driver.quit();
 	}
 
 	public void takeScreenshot(ITestResult result) throws IOException {

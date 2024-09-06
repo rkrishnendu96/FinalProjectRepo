@@ -10,5 +10,6 @@ public class Messages {
 	public static final String UNSUCCESSFULL_PASSWORD_RESET = "Password reset not successful";
 	public static final String SUCCESSFULL_PASSWORD_RESET = "Password reset successful";
 	public static final String PRODUCT_IMPORT_SUCCESSFUL = "Product Imported Successfully";
-
+	public static final String DELETE_MESSAGE_UNSUCCESSFULL = "Messsage is not deleted";
+	public static final String FAILED_NEWLYADDED_USER = "Newly added user failed";
 }

@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitUtility {
 
-	public static final long IMPLICITLYWAIT = 10; // final method
+	public static final long IMPLICITLYWAIT = 10;
 	public static final long EXPLICITLYWAIT = 10;
 	public static final long FLUENTWAITWITHTIMEOUT = 10;
 	public static final long FLUENTWAITPOLLINGEVERY = 2;
@@ -25,6 +25,18 @@ public class WaitUtility {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITLYWAIT));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+
+	public static void waitForAlertPresent(WebDriver driver, WebElement element) {
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITLYWAIT));
+		wait.until(ExpectedConditions.alertIsPresent());
+	}
+
+	public static void waitForAnElementToBeSelected(WebDriver driver, WebElement element) {
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITLYWAIT));
+		wait.until(ExpectedConditions.elementToBeSelected(element));
 	}
 
 	public static void waitForAnElementAndCheckFrequentlyAlertPresent(WebDriver driver) {

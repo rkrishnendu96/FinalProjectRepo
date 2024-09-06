@@ -40,17 +40,13 @@ public class RegisterPageTest extends Base {
 		create.enterFirstName(firstNameFake);
 		create.enterLastName(lastaNameFake);
 		create.enterEmail(emailFake);
-		// create.clickOnRole();
-		// PageUtility.selectOption(create.getRoleLists(), roleExcel);
 		create.enterUsername(userNameRegisterFake);
 		create.enterPassword(passwordRegisterFake);
 		create.enterConfirmPassword(passwordRegisterFake);
 		create.enterSalesCommission(salesCommissionExcel);
-		// create.clickOnContacts();
-		// PageUtility.selectOption(create.selectContactList(), contactsExcel);;
 		users = create.clickOnSaveButton();
 		users.enterSearch(firstNameFake);
-	}
+		Assert.assertEquals(users.getEmailText(),emailFake, Messages.FAILED_NEWLYADDED_USER);}
 
 	@Test
 	public void verifyUserLoginWithNewlyAddedUser() {
@@ -95,6 +91,14 @@ public class RegisterPageTest extends Base {
 
 	}
 }
+
+
+
+
+
+
+
+
 
 /*
  * ///////////////// admin login////////////////
