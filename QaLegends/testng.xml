@@ -8,15 +8,19 @@
 		<parameter name="browser" value="Chrome"></parameter>
 
 		<classes>
-		<!--	<class name="testScript.LoginPageTest" />
-			<class name="testScript.ResetPageTest" /> -->
-		<!-- 	<class name="testScript.RegisterPageTest" />
-			<class name="testScript.HomePageTest" />
-			<class name="testScript.EditProfileTest" />-->
-			
-			<class name="testScript.DeleteProfileTest"/>
-		<!--	<class name="testScript.ProductsImportTest" />
-			-->
+			<class name="testScript.LoginPageTest" />
+			<class
+				name="testScript.ResetPageTest" />
+			<class
+				name="testScript.RegisterPageTest" />
+			<class
+				name="testScript.HomePageTest" />
+			<class
+				name="testScript.EditProfileTest" />
+			<class
+				name="testScript.DeleteProfileTest" />
+			<class
+				name="testScript.ProductsImportTest" />
 		</classes>
 	</test> <!--
 	Test -->

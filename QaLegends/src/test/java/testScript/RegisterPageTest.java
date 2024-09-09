@@ -16,7 +16,7 @@ import utilities.RandomDataUtility;
 
 public class RegisterPageTest extends Base {
 	@Test
-	public void VerifyRegisterPage() {
+	public void VerifyUserRegisterPage() {
 
 		String usernameExcel = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
 		String passwordExcel = ExcelUtility.getIntegerData(0, 1, Constants.LOGIN_PAGE);
